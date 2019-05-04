@@ -1,16 +1,56 @@
 <!DOCTYPE html>
 <html lang="en-US">
+<style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <body>
 
-<div ng-app="" ng-init="firstName='Basil';lastName='Singh'">
+<div ng-app="" ng-init="firstName='Basil';lastName='Singh';resume = 'https://drive.google.com/file/d/1-rS7LPe2SuMDuaejTrcdUTroU_PUdgw5/view?usp=sharing'" ng-controller="customersCtrl">
   <p>Name : <input type="text" ng-model="name"></p>
   <h1>Hello {{name}}</h1>
   <br>
-  <h2>My name is: {{ firstName + " " + lastName }}</h2>
+  <h2>My name is {{ firstName + " " + lastName }}.</h2>
   <br>
-  <p>Currently, I am a third year undergraduate student of Indian Institue of Technology, Kanpur pursuing B.S. in Economic Sciences.</p>
+  <p>Currently, I am a third year undergraduate student of Indian Institue of Technology, Kanpur, India. I am pursuing B.S. in Economic Sciences.</p>
+  <br>
+  <p>Here is a list of all social media websites through which you can contact me along with my resume.
+  <br>
+  <table>
+    <tr>
+      <th>Serial No.</th>
+      <th>Category</th>
+      <th>Link</th>
+    </tr>
+    <tr ng-repeat = "subject in me.subjects">
+      <td>{{ $index + 1 }}</td>
+      <td>{{ subject.category }}</td>
+      <td>{{ subject.link }}</td>
+    </tr>
+  </table>
 </div>
-
+  
+<script>
+  var mainApp = angular.module("mainApp", []);
+  
+  mainApp.controller('customersCtrl', function($scope){
+    $scope.me = {
+      subjects: [
+        {category: 'Resume', link: <a ng-href="{{resume}}">{{resume}}</a>}
+        {category: 'Github', link: <a ng-href="https://github.com/Basil-3"></a>},
+        ],
+      };
+    });
+</script>
 </body>
 </html>
