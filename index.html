@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <body>
 
-<div ng-app="" ng-init="firstName='Basil';lastName='Singh'" ng-controller="customersCtrl">
+<div ng-app="">
   <p>Name : <input type="text" ng-model="name"></p>
-  <h1>Hello {{name}}</h1>
-  <br>
-  <h2>My name is {{ firstName + " " + lastName }}.</h2>
-  <br>
-  <p>Currently, I am a third year undergraduate student of Indian Institue of Technology, Kanpur, India. I am pursuing B.S. in Economic Sciences.</p>
-  <br>
-  <p>Here is a list of all social media websites through which you can contact me along with my resume.
-  <br>
-  <p> Resume: <a ng-href="https://drive.google.com/file/d/1-rS7LPe2SuMDuaejTrcdUTroU_PUdgw5/view?usp=sharing">here</a>
+  <h1>Hello {{name}}!</h1>
+  <h2>My name is Basil Singh</h2>
+  <p>I am a third year undergraduate student at Indian Institute of Technology, Kanpur, India.I am pursuing B.S. Economic Sciences.</p>
+  <p>Resume: <a ng-href="https://drive.google.com/file/d/1-rS7LPe2SuMDuaejTrcdUTroU_PUdgw5/view?usp=sharing">here</a>
 </div>
-  
+
 </body>
 </html>
